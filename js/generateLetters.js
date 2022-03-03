@@ -1,15 +1,9 @@
-const letters = document.getElementById('letters');
+const container = document.getElementById('container');
 
-const container = document.createElement('div');
-container.classList.add('container')
+// const main = document.createElement('div');
+// container.classList.add('container')
 
-// const getLetter = (url) => {
-//     fetch(url)
-//     .then(res => res.json())
-//     .then(data => createLetters(data));
-// }
-
-const createLetters = (countries) => {
+const world_countries = (countries) => {
     // data.forEach(i => {
             
     // });
@@ -20,7 +14,7 @@ const createLetters = (countries) => {
         for (let index = 0; index < data.length; index++) {
     
            //console.log(data[index].name.common);
-           if (data[index].name.common === "South Africa") {  
+           if (data[index].name.common !== "") {  
                
                 
                 
@@ -29,7 +23,7 @@ const createLetters = (countries) => {
                 span.classList.add('block');
                 container.appendChild(span);
 
-                
+
                 //h2 country name
                 countryName = document.createElement('h2');
                 countryName.classList.add('countryH1');
@@ -77,6 +71,6 @@ const language = (langs,span) => {
 }
 
 //getLetter('./js/data/alphas.json')
-createLetters('https://restcountries.com/v3.1/all')
+world_countries('https://restcountries.com/v3.1/all')
 //getLetter('https://restcountries.com/v3.1/all') 
 letters.appendChild(container)
