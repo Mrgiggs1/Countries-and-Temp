@@ -1,0 +1,21 @@
+.block{
+    background-color: rgb(201, 201, 221);
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(4, 0, 255);
+}
+
+.block .countryH1{
+    font-family: cursive;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.block .language {
+    display: flex;
+    border: 1px solid red;
+}
+
+.continent {
+    border: 1px solid rgb(47, 150, 61);
+    flex-basis: 30%;
+}
