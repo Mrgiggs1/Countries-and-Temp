@@ -1,21 +1,59 @@
+html {
+    margin: 0%;
+}
 .container{
-    
+    height: auto;
+    margin: 2rem 5rem;
     color: rgb(0, 0, 0);
     border: 1px solid rgb(4, 0, 255);
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWP91SEK6brSQTr9FYhFP75n5eYFspmv6x-A&usqp=CAUs");
+    background-size: auto;
+}
+
+body {
+    margin: 0%;
+    width: 100%;
 }
 
 .block .countryH1{
     font-family: cursive;
     text-align: center;
     font-size: xx-large;
+    /* border: 1px solid rgb(0, 255, 42); */
+    margin: -0.6rem 1rem;
+    background-color: rgb(204, 212, 219);
+    border-radius: 16px;
 }
 
-.block .language {
+.block .language{
     display: flex;
-    border: 1px solid red;
+    flex-wrap: wrap;
+    /* border: 1px solid red; */
+    text-align: center;
+    margin: -0.2rem 1rem;
+    width: 30%;
 }
 
 .continent {
-    border: 1px solid rgb(47, 150, 61);
+    /* border: 1px solid rgb(47, 150, 61); */
     flex-basis: 30%;
+    text-align: center;
+    border-radius: 5px;
+    background-color: azure;
+}
+
+.card {
+    height: auto;
+    border: 1px solid rgb(41, 32, 80);
+    flex-basis: 19%;
+    margin: 1rem 2rem;
+    width: 100%;
+    background-color: aliceblue;
+    border-radius: 16px;
+    padding: 1rem 1rem;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
 }
