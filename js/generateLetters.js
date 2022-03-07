@@ -56,6 +56,7 @@ const world_countries = (countries) => {
                 span.appendChild(countryName);
 
             }
+            
                 
         }
         
@@ -64,7 +65,8 @@ const world_countries = (countries) => {
 }
 
 const weather = (place) => {
-    const api = 'https://api.weatherapi.com/v1/current.json?key=5fa17638870a431d9b282255220403&q='+place+'&aqi=no';
+    //const api = 'https://api.weatherapi.com/v1/current.json?key=5fa17638870a431d9b282255220403&q='+place+'&aqi=no';
+    const api = 'https://api.weatherapi.com/v1/current.json?key=5fa17638870a431d9b282255220403&q=Pretoria&aqi=no&'
     
     Object.entries(place).forEach(([key, value]) => {
         console.log(value);
