@@ -1,17 +1,21 @@
+
+
+
 const container = document.getElementById('container');
 
 // const main = document.createElement('div');
 // container.classList.add('container')
 
 const world_countries = (countries) => {
-
     //fetch the whole data from API to data object
     fetch(countries).then(res => res.json()).then(data => {
-    
+    //console.log(data);
         //itarates all data until its length
+        
         for (let index = 0; index < data.length; index++) {
-    
-           //console.log(data[index].name.common);
+
+           const capit = data[index].capital;
+
            if (data[index].name.common !== undefined) {
                
                 
@@ -31,12 +35,11 @@ const world_countries = (countries) => {
                 countryName = document.createElement('h2');
                 countryName.classList.add('countryH1');
                 countryName.append(data[index].name.common);
+                
 
+                
                 span.appendChild(countryName);
                 
-
-                
-
                 const para = document.createElement('p');
                 para.classList.add('continent');
                 
@@ -46,6 +49,17 @@ const world_countries = (countries) => {
                 
                 
                 language(data[index].languages, span);
+
+                if(capit === undefined)
+                {
+                    console.log('No Capital City');
+
+                }else{
+
+                    weather('https://api.weatherapi.com/v1/current.json?key=5fa17638870a431d9b282255220403&q='+capit+'&aqi=no&', span);
+                    
+                }
+
                 block.appendChild(span);
             }else{
                 //h2 country name
@@ -64,16 +78,25 @@ const world_countries = (countries) => {
     })
 }
 
-const weather = (place) => {
-    //const api = 'https://api.weatherapi.com/v1/current.json?key=5fa17638870a431d9b282255220403&q='+place+'&aqi=no';
-    const api = 'https://api.weatherapi.com/v1/current.json?key=5fa17638870a431d9b282255220403&q=Pretoria&aqi=no&'
-    
-    Object.entries(place).forEach(([key, value]) => {
-        console.log(value);
+
+
+const weather = (place, span) => {
+
+    //console.log(place);
+    fetch(place).then(res => { return res.json(); }).then(data => {
+       // console.log(data);
+        //console.log(data.current.temp_f);
+
+        const weatherDis = document.createElement('p');
+        weatherDis.classList.add('weatherAPI');
+        
+        
+        weatherDis.append('Temperature C:'+data.current.temp_c+` / F`+data.current.temp_f+`  `+data.current.condition.text);
+        span.appendChild(weatherDis);
+        // return data.location.country;
+        
     });
-
-    return api;
-
+    
 }
 
 const language = (langs,span) => {
@@ -97,6 +120,6 @@ const language = (langs,span) => {
 
 //getLetter('./js/data/alphas.json')
 world_countries('https://restcountries.com/v3.1/all')
-weather('Pretoria');
+
 //getLetter('https://restcountries.com/v3.1/all')
 // letters.appendChild(container);
