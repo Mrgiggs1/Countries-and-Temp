@@ -35,6 +35,7 @@ const world_countries = (countries) => {
                 countryName = document.createElement('h2');
                 countryName.classList.add('countryH1');
                 countryName.append(data[index].name.common);
+        
                 
 
                 
@@ -91,7 +92,8 @@ const weather = (place, span) => {
         weatherDis.classList.add('weatherAPI');
         
         
-        weatherDis.append('Temperature C:'+data.current.temp_c+` / F`+data.current.temp_f+`  `+data.current.condition.text);
+        weatherDis.append('Temperature C:'+data.current.temp_c+` / F`+data.current.temp_f+`  `+data.current.condition.text +`
+         `+data.location.localtime);
         span.appendChild(weatherDis);
         // return data.location.country;
         
@@ -119,7 +121,7 @@ const language = (langs,span) => {
 }
 
 //getLetter('./js/data/alphas.json')
-world_countries('https://restcountries.com/v3.1/all')
+world_countries('https://restcountries.com/v3.1/all');
 
 //getLetter('https://restcountries.com/v3.1/all')
 // letters.appendChild(container);
